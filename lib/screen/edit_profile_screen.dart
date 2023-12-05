@@ -268,7 +268,18 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             Expanded(
                               flex:3,
                                 child: InkWell(
-                                  onTap: (){},
+                                          onTap: ()async{
+                                      final XFile?
+                                      images = await ImagePicker().pickImage(source: ImageSource.camera,imageQuality: 50);
+                                      if(images!= null){
+                                        photo= images;
+                                        if(mounted){
+                                          setState(() {
+
+                                          });
+                                        }
+                                      }
+                                    },
                                   child: Container(
                                     child: Visibility(
                                         visible: photo == null,
